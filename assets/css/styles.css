@@ -1,0 +1,110 @@
+* {
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-light: #ffffff;
+  --color-blue: #6959c5;
+  --transition: 0.5s;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+/* Formatações genericas */
+a {
+  text-align: none; /*Tira o sublinhado*/
+  color: var(--color-light); /* Chama a variavel da cor*/
+  font-weight: 900; /* Peso da fonte*/
+  transition: var(--transition);
+}
+img {
+  max-width: 100%; /* Boa pratica, para a imagem só ocupar a largura total da pagina, nunca mais que isso*/
+}
+
+/*Elementos da pagina*/
+.btn {
+  background-color: var(--color-blue);
+  border: 2px solid var(--color-blue);
+  padding: 8px 3.5rem;
+  border-radius: 5px;
+  color: var(--color-light);
+  transition: var(--transition);
+}
+/*Mudar de cor ao clicar no elemento acima*/
+.btn.hover {
+  background-color: transparent;
+  color: var(--color-blue);
+}
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.3), rgba(4, 9, 30, 0.9)),
+    url(../../assets/images/emcasa.jpg); /* RGBA é para controlar a opacidade da imagem*/
+  background-position: 50%; /*Sempre ocupar 50% da tela*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex; /*container flexivel*/
+  align-items: center;
+}
+.hero-content {
+  width: 60%;
+  padding: 5rem;
+  color: var(--color-light);
+}
+.hero-content h2 {
+  font-size: 7vmin;
+}
+.hero-content p {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 3.6rem;
+}
+/*Padrão de titulo e seção*/
+.hotel-title {
+  font-size: 5vmin;
+  color: var(--color-blue);
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+.hotel-list {
+  width: 100%; /*Para caber sempre na largura da pagina, não mexi no heigth para deixar automatico*/
+  display: flex; /*convertendo para flex*/
+  flex-wrap: wrap; /*Fazendo a quebra da flex automaticamente*/
+  align-items: center; /*Alinhado ao centro do container*/
+  justify-content: space-evenly; /*Espaçamento sempre igual entre os elementos da flex, ainhado ao centro, devido ao elemento flexivel*/
+}
+.hotel-item {
+  width: 28%; /*28% dos 100% da largura do hotel-list*/
+  margin: 3rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /*preciso dele quando uso o flex*/
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 1px 1px 30px #ccc;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+/*Quando passar o mouse em cima o elemento fica maior*/
+.hotel-item:hover {
+  transform: scale(1.1);
+}
+.hotel-item imag {
+  margin: 90%; /*Tamanho maximo para ocupar o container*/
+  border-radius: 5px; /*cantos arredondados para o container*/
+}
+.hotel-item h3 {
+  margin: 2rem 0;
+  font-weight: 800;
+}
+.hotel-item p {
+  margin: 0 0 3rem;
+  width: 80%;
+}
